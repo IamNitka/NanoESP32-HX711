@@ -1,0 +1,67 @@
+function doGet(e) { 
+  Logger.log( JSON.stringify(e) );
+  var result = 'Ok';
+  if (e.parameter == 'undefined') {
+    result = 'No Parameters';
+  }
+  else {
+    var sheet_id = 'SpreadsheetID'; 	// Spreadsheet ID
+    var sheet = SpreadsheetApp.openById(sheet_id).getActiveSheet();
+    var newRow = sheet.getLastRow() + 1;						
+    var rowData = [];
+    var Curr_Date = new Date();
+    rowData[0] = Curr_Date; // Date in column A
+    var Curr_Time = Utilities.formatDate(Curr_Date, 'Europe/London', 'HH:mm:ss'); // setting the locaiton
+    rowData[1] = Curr_Time; // Time in column B
+    for (var param in e.parameter) {
+      Logger.log('In for loop, param=' + param);
+      var value = stripQuotes(e.parameter[param]);
+      Logger.log(param + ':' + e.parameter[param]);
+      switch (param) {
+        case 'value1':
+          rowData[2] = value; 
+          result = 'value1 Written on column C'; 
+          break;
+        case 'value2':
+          rowData[3] = value; 
+          result = 'value2 Written on column D'; 
+          break;  
+        case 'value3':
+          rowData[4] = value; 
+          result = 'value3 Written on column E'; 
+          break;  
+        case 'value4':
+          rowData[5] = value; 
+          result = 'value4 Written on column F'; 
+          break;  
+        case 'value5':
+          rowData[6] = value; 
+          result = 'value5 Written on column G'; 
+          break;
+        case 'value6':
+          rowData[7] = value; 
+          result = 'value6 Written on column H'; 
+          break;
+        case 'value7':
+          rowData[8] = value; 
+          result = 'value7 Written on column I'; 
+          break;
+        case 'value8':
+          rowData[9] = value; 
+          result = 'value8 Written on column J'; 
+          break;
+        case 'value9':
+          rowData[10] = value; 
+          result = 'value9 Written on column K'; 
+          break;
+      }
+    }
+    Logger.log(JSON.stringify(rowData));
+    var newRange = sheet.getRange(newRow, 1, 1, rowData.length);
+    newRange.setValues([rowData]);
+  }
+  return ContentService.createTextOutput(result);
+}
+function stripQuotes( value ) {
+  return value.replace(/^["']|['"]$/g, "");
+}
