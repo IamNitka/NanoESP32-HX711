@@ -28,11 +28,11 @@ The code requires 4 libraries
 4. esp_sleep.h
 
 **Google script**
-The result will be upload to the Google Sheet by set up the *scriptUrl*, the AppScript in Google sheet is required
+The result will be upload to the Google Sheet by set up the *'scriptUrl'*, the AppScript in Google sheet is required
 
 **WiFi Credential**
-Update the *ssid* and *password* variables with your WiFi network
+Update the *'ssid'* and *'password'* variables with your WiFi network
 
 **Calibration value**
-Ensure the calibration values for each load cell are correctly set in the *cal* array.
+Ensure the calibration values for each load cell are correctly set in the *'cal'* array.
 
