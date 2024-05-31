@@ -11,17 +11,17 @@ byte dataPins[numScales] = {2, 3, 4, 5, 6, 7};
 byte clockPins[numScales] = {8, 9, 10, 11, 12, 13};
 
 // Calibration values
-float cal[numScales] = {435.17, 400, 233, 333, 232, 432};
+float cal[numScales] = {435.17, 400, 233, 333, 232, 432}; // update the calibration values
 
 // Array for each HX711 instance
 HX711 scales[numScales];
 
 // WiFi credentials
-const char* ssid = "CRM_BaileyStreet";
-const char* password = "39baileystreet";
+const char* ssid = "WIFI_USER_NAME"; // update the WiFi network detail
+const char* password = "WIFI_PASSWORD";
 
 // URL for sending data to Google Sheets
-const String scriptUrl = "https://script.google.com/macros/s/AKfycbwzGHQkW-zkDKtslXPBnZMrGIIc75dHhi1HtNoO1XrGBkQh2syfrs2dP7AAFtY7xbR7/exec?";
+const String scriptUrl = "https://script.google.com/macros/s/xxx...xxx/exec?"; //updated the scriptUrl
 
 // Deep sleep duration (microseconds) - 3 minutes
 const uint64_t uS_TO_S_FACTOR = 1000000ULL;
