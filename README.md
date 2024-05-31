@@ -1,5 +1,7 @@
 ## NanoESP32 for Multiple-scales via HX711
 
+The code was setup on Arduino NanoESP32 connected with 6 sets of HX711 (M5-stack) and loadcell. The scales will read to read 10 values and send the data to scriptUrl (GoogleSheet), then deep sleep for 3 mins.
+
 ### Hardware setup
 
 **Load Cells and HX711 Connection**
